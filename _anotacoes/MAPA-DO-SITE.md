@@ -29,15 +29,15 @@ Na ordem em que aparecem no site:
 
 ```html
 <!-- Topo -->               logo + menu
-<!-- Início -->             título, foto dos girassóis, selo
-<!-- Destaques -->          3 cards: online, duração, sigilo
-<!-- Sobre mim -->          texto e formação (anos)
+<!-- Início -->             título para os pais, foto dos girassóis, selo
+<!-- Para os pais -->       "O comportamento mudou?" + sinais de atenção + botões
 <!-- Como posso ajudar -->  3 cards de temas (no celular andam para o lado)
-<!-- Para os pais -->        texto para os pais + sinais de atenção + botões
-<!-- Como funciona -->      ficha + linha do tempo (4 passos)
+<!-- Sobre mim -->          texto e formação (anos)
+<!-- Destaques -->          3 cards: online, duração, sigilo
+<!-- Como funciona -->      ficha + linha do tempo (4 passos com a família)
+<!-- Dúvidas -->            cartão de contato + perguntas dos pais
+<!-- Agendar -->            formulário (responsável, quem, idade) que abre o WhatsApp
 <!-- Instagram -->          perfil + grade de fotos
-<!-- Dúvidas -->            cartão de contato + perguntas
-<!-- Agendar -->            formulário que abre o WhatsApp
 <!-- Rodapé -->             links, contato, aviso CVV, crédito
 <!-- Botão WhatsApp -->     botão verde flutuante
 <!-- Ícone girassol -->     desenho do girassol usado no site
