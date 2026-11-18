@@ -33,8 +33,7 @@ Na ordem em que aparecem no site:
 <!-- Para os pais -->       "O comportamento mudou?" + sinais de atenção + botões
 <!-- Como posso ajudar -->  3 cards de temas (no celular andam para o lado)
 <!-- Sobre mim -->          texto e formação (anos)
-<!-- Destaques -->          3 cards: online, duração, sigilo
-<!-- Como funciona -->      ficha + linha do tempo (4 passos com a família)
+<!-- Como funciona -->      ficha (público, 1ª conversa, sessões, formato) + 4 passos
 <!-- Dúvidas -->            cartão de contato + perguntas dos pais
 <!-- Agendar -->            formulário (responsável, quem, idade) que abre o WhatsApp
 <!-- Instagram -->          perfil + grade de fotos
