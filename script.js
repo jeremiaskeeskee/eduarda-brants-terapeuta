@@ -100,6 +100,8 @@ document.getElementById("ano").textContent = new Date().getFullYear();
   const barra = document.getElementById("ajudaBarra");
   const atual = document.getElementById("ajudaAtual");
   const dica = secao.querySelector(".ajuda__dica");
+  const total = document.getElementById("ajudaTotal");
+  if (total) total.textContent = String(cards.length).padStart(2, "0");
   const calmo = window.matchMedia("(prefers-reduced-motion: reduce)");
   let distancia = 0, ticking = false;
 
@@ -112,7 +114,11 @@ document.getElementById("ano").textContent = new Date().getFullYear();
   };
 
   const montar = () => {
-    if (!calmo.matches) {
+    secao.classList.remove("is-pin");
+    trilho.style.transform = "";
+    const sobra = Math.max(0, trilho.scrollWidth - viewport.clientWidth);
+    secao.classList.toggle("sem-rolagem", sobra < 2);
+    if (!calmo.matches && sobra >= 2) {
       secao.classList.add("is-pin");
       distancia = Math.max(0, trilho.scrollWidth - viewport.clientWidth);
       secao.style.height = `${window.innerHeight + distancia * 1.25}px`;

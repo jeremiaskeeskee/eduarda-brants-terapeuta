@@ -32,7 +32,8 @@ Na ordem em que aparecem no site:
 <!-- Início -->             título, foto dos girassóis, selo
 <!-- Destaques -->          3 cards: online, duração, sigilo
 <!-- Sobre mim -->          texto e formação (anos)
-<!-- Como posso ajudar -->  6 cards que andam para o lado
+<!-- Como posso ajudar -->  3 cards de temas (no celular andam para o lado)
+<!-- Para os pais -->        texto para os pais + sinais de atenção + botões
 <!-- Como funciona -->      ficha + linha do tempo (4 passos)
 <!-- Instagram -->          perfil + grade de fotos
 <!-- Dúvidas -->            cartão de contato + perguntas
@@ -54,6 +55,7 @@ Na ordem em que aparecem no site:
 /* Destaques */
 /* Sobre mim */
 /* Cards */  /* Como posso ajudar */
+/* Para os pais */
 /* Como funciona */
 /* Instagram */
 /* Dúvidas */
@@ -76,7 +78,7 @@ Na ordem em que aparecem no site:
 /* Dúvidas */                abre uma pergunta por vez
 /* Links do WhatsApp */
 /* Formulário */             monta a mensagem do WhatsApp
-/* Como posso ajudar */      cards andando para o lado
+/* Como posso ajudar */      cards andando para o lado (só quando não cabem na tela)
 /* Como funciona */          linha do tempo acendendo
 ```
 

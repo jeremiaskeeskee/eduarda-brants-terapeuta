@@ -810,3 +810,46 @@ main > section.funciona { overflow: clip; }
 .rodape__credito a:hover { border-color: var(--girassol); }
 @media (max-width: 600px) { .rodape__credito { text-align: left; line-height: 1.7; } }
 @media (max-width: 600px) { .rodape { padding-bottom: 92px; } }
+
+/* Para os pais */
+.pais {
+  background:
+    radial-gradient(circle at 100% 0%, transparent 0 299px, rgba(181, 106, 53, .14) 300px, transparent 301px),
+    radial-gradient(circle at 100% 0%, transparent 0 459px, rgba(181, 106, 53, .08) 460px, transparent 461px),
+    var(--branco);
+}
+.pais__in { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(40px, 6vw, 90px); align-items: center; }
+.pais h2 { font-size: clamp(34px, 4.4vw, 54px); margin-bottom: 26px; }
+.pais__txt > p { color: var(--tinta-suave); max-width: 34em; }
+.pais__destaque {
+  margin-top: 26px; padding: 4px 0 4px 22px; border-left: 2px solid var(--girassol);
+  font: italic 400 clamp(18px, 1.7vw, 21px)/1.5 var(--serif); color: var(--tinta) !important;
+}
+.pais__card {
+  position: relative; overflow: hidden;
+  background: var(--marinho); color: var(--creme);
+  border-radius: 28px; padding: clamp(28px, 3.4vw, 40px);
+  box-shadow: 0 30px 60px -30px rgba(31, 42, 68, .6);
+}
+.pais__card::after {
+  content: ""; position: absolute; width: 280px; height: 280px; right: -120px; top: -120px;
+  border-radius: 50%; border: 1px solid rgba(231, 169, 43, .25); pointer-events: none;
+}
+.pais__card-titulo { font: 600 12px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--girassol); margin: 0 0 18px; }
+.pais__sinais { list-style: none; margin: 0 0 30px; padding: 0; }
+.pais__sinais li {
+  display: flex; align-items: baseline; gap: 16px;
+  padding: 15px 0; border-bottom: 1px solid rgba(247, 240, 229, .12);
+  font: 400 clamp(18px, 1.6vw, 20px)/1.35 var(--serif);
+}
+.pais__sinais span { font: italic 400 14px/1 var(--serif); color: var(--girassol); min-width: 22px; }
+.pais__acoes { display: grid; gap: 12px; }
+.pais__acoes .btn { width: 100%; }
+.pais__acoes .btn--whats { padding: 17px; font-size: 15.5px; }
+
+@media (max-width: 880px) {
+  .pais__in { grid-template-columns: 1fr; }
+}
+
+/* Como posso ajudar sem rolagem lateral (quando todos os cards cabem) */
+.ajuda.sem-rolagem .ajuda__progresso { display: none; }
