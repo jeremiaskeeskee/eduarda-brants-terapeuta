@@ -853,3 +853,6 @@ main > section.funciona { overflow: clip; }
 
 /* Como posso ajudar sem rolagem lateral (quando todos os cards cabem) */
 .ajuda.sem-rolagem .ajuda__progresso { display: none; }
+.pais__nota { margin: -12px 0 22px; font-size: 14px; color: rgba(247, 240, 229, .75); }
+.campo input[inputmode="numeric"] { max-width: 160px; }
+.hero h1 { font-size: clamp(38px, 5.1vw, 70px); }

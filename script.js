@@ -51,7 +51,7 @@ faqs.forEach((d) => d.addEventListener("toggle", () => {
 
 /* Links do WhatsApp */
 const linkWhats = (texto) => `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(texto)}`;
-flutuante.href = linkWhats(`Olá, ${CONFIG.nome}! Vi seu site e gostaria de saber mais sobre as sessões de terapia.`);
+flutuante.href = linkWhats(`Olá, ${CONFIG.nome}! Vi seu site e gostaria de saber mais sobre o atendimento.`);
 document.querySelectorAll(".js-whats").forEach((a) => { a.href = flutuante.href; });
 flutuante.target = "_blank";
 flutuante.rel = "noopener";
@@ -76,8 +76,13 @@ form.addEventListener("submit", (e) => {
   nota.classList.remove("erro");
 
   const msg = (dados.get("mensagem") || "").toString().trim();
+  const idade = (dados.get("idade") || "").toString().replace(/\D/g, "");
+  const paraFilho = dados.get("quem") !== "eu";
+  const abertura = paraFilho
+    ? `Olá, ${CONFIG.nome}! Me chamo ${nome} e gostaria de agendar uma conversa sobre o meu filho(a)${idade ? `, de ${idade} anos` : ""}.`
+    : `Olá, ${CONFIG.nome}! Me chamo ${nome}${idade ? `, tenho ${idade} anos` : ""} e gostaria de agendar uma sessão.`;
   const linhas = [
-    `Olá, ${CONFIG.nome}! Me chamo ${nome} e gostaria de agendar uma sessão.`,
+    abertura,
     ``,
     `• Atendimento: online`,
     `• Melhor período: ${dados.get("periodo")}`,
