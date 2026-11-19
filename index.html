@@ -449,16 +449,21 @@
           <label><input type="radio" name="periodo" value="Tarde" checked><span>Tarde</span></label>
         </div>
       </fieldset>
-      <div class="campo">
-        <label for="fMsg">Quer me contar um pouco? <small>(opcional)</small></label>
-        <textarea id="fMsg" name="mensagem" rows="3" placeholder="Ex.: meu filho anda mais calado e irritado. Tudo aqui é sigiloso."></textarea>
-      </div>
+      <fieldset class="campo">
+        <legend>Como conheceu meu trabalho? <small>(opcional)</small></legend>
+        <div class="pilulas">
+          <label><input type="radio" name="origem" value="Instagram"><span>Instagram</span></label>
+          <label><input type="radio" name="origem" value="Indicação"><span>Indicação</span></label>
+          <label><input type="radio" name="origem" value="Google"><span>Google</span></label>
+          <label><input type="radio" name="origem" value="Outro"><span>Outro</span></label>
+        </div>
+      </fieldset>
       <button type="submit" class="btn btn--whats">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.1.1.7-.1 1.2z"/></svg>
         Enviar pelo WhatsApp
       </button>
       <p class="form__nota" id="formNota" role="status" aria-live="polite"></p>
-      <p class="form__consentimento">Ao enviar, você concorda com a <a href="privacidade.html">Política de Privacidade</a> e o <a href="aviso-legal.html">Aviso Legal</a>. Compartilhe só o necessário; o resto conversamos na sessão.</p>
+      <p class="form__consentimento">Ao enviar, você concorda com a <a href="privacidade.html">Política de Privacidade</a> e o <a href="aviso-legal.html">Aviso Legal</a>.</p>
     </form>
   </div>
 </section>
