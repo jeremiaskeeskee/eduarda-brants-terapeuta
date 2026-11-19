@@ -36,10 +36,10 @@ const io = new IntersectionObserver((entries) => {
   entries.forEach((en) => {
     if (en.isIntersecting) { en.target.classList.add("is-in"); io.unobserve(en.target); }
   });
-}, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+}, { threshold: 0.01, rootMargin: "0px 0px 60px 0px" });
 document.querySelectorAll(".reveal").forEach((el, i) => {
   const irmaos = [...el.parentElement.children].filter((c) => c.classList.contains("reveal"));
-  el.style.transitionDelay = `${Math.min(irmaos.indexOf(el), 5) * 80}ms`;
+  el.style.transitionDelay = `${Math.min(irmaos.indexOf(el), 4) * 40}ms`;
   io.observe(el);
 });
 
