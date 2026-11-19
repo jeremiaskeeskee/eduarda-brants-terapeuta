@@ -75,7 +75,7 @@ form.addEventListener("submit", (e) => {
   campoNome.parentElement.classList.remove("erro");
   nota.classList.remove("erro");
 
-  const msg = (dados.get("mensagem") || "").toString().trim();
+  const origem = dados.get("origem");
   const idade = (dados.get("idade") || "").toString().replace(/\D/g, "");
   const paraFilho = dados.get("quem") !== "eu";
   const abertura = paraFilho
@@ -87,7 +87,7 @@ form.addEventListener("submit", (e) => {
     `• Atendimento: online`,
     `• Melhor período: ${dados.get("periodo")}`,
   ];
-  if (msg) linhas.push(``, msg);
+  if (origem) linhas.push(`• Conheci pelo: ${origem}`);
 
   window.open(linkWhats(linhas.join("\n")), "_blank", "noopener");
   nota.textContent = "Abrindo o WhatsApp… se não abrir, verifique se o navegador bloqueou a janela.";
