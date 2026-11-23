@@ -2,7 +2,7 @@
 
 ## O que vai para o ar
 - `index.html`, `privacidade.html`, `aviso-legal.html`, `404.html`
-- `style.css`, `script.js`, `favicon.svg`, `robots.txt`, `vercel.json`
+- `style.css`, `script.js`, `favicon.svg`, `robots.txt`, `sitemap.xml`, `vercel.json`
 - pasta `img/`
 
 Não vão para o ar (já estão bloqueadas no `.vercelignore` e no `.gitignore`):
