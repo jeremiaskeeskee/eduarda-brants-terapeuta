@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://eduardabrants.com.br/sitemap.xml
+Sitemap: https://www.eduardabrants.com.br/sitemap.xml
