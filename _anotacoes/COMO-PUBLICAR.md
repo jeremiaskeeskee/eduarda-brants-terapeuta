@@ -6,7 +6,7 @@
 - pasta `img/`
 
 Não vão para o ar (já estão bloqueadas no `.vercelignore` e no `.gitignore`):
-`_fotos-originais/`, `.claude/` e este arquivo.
+`_fotos-originais/` e este arquivo.
 
 ## Opção A: pelo GitHub (igual ao projeto SK Móveis)
 1. No GitHub, crie um repositório novo e **privado** (ex.: `eduarda-brants-terapeuta`).
