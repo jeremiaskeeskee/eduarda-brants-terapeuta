@@ -1,3 +1,8 @@
+/* Fontes */
+@font-face { font-family: "Fraunces"; font-style: normal; font-weight: 300 600; font-display: swap; src: url("fontes/fraunces.woff2") format("woff2"); }
+@font-face { font-family: "Fraunces"; font-style: italic; font-weight: 300 600; font-display: swap; src: url("fontes/fraunces-italico.woff2") format("woff2"); }
+@font-face { font-family: "DM Sans"; font-style: normal; font-weight: 400 600; font-display: swap; src: url("fontes/dm-sans.woff2") format("woff2"); }
+
 /* Cores, fontes e medidas */
 :root {
   --creme: #f7f0e5;
@@ -846,3 +851,17 @@ main > section.funciona { overflow: clip; }
 .credencial:hover .credencial__ico svg, .credencial.is-toque .credencial__ico svg { transform: rotate(-12deg) scale(1.12); }
 @keyframes brilho { 0% { left: -60%; opacity: 1; } 100% { left: 120%; opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .credencial::after { display: none; } }
+
+/* Contraste: textos pequenos em caramelo mais escuro */
+.eyebrow:not(.eyebrow--claro),
+.marca__nome small,
+.menu > a:not(.btn)::before,
+.menu > a:not(.btn)::after,
+.menu__frase em,
+.form__consentimento a,
+.legal__secao h2 span,
+.legal__secao a,
+.legal__outra a,
+.ajuda__contador b,
+.funciona__ficha dt { color: var(--caramelo-esc); }
+.marca--claro .marca__nome small { color: var(--girassol); }

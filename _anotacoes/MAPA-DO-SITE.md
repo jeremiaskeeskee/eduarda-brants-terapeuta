@@ -17,6 +17,7 @@ O mesmo nome aparece no HTML e no CSS.
 | `script.js` | Menu, formulário, animações, WhatsApp |
 | `img/` | Fotos do site (WebP) e imagem de compartilhamento (`og-image.jpg`) |
 | `favicon.svg` | Ícone da aba (girassol) |
+| `fontes/` | Fontes do site (Fraunces e DM Sans), hospedadas no próprio site |
 | `robots.txt` / `sitemap.xml` | Instruções e lista de páginas para o Google |
 | `vercel.json` | Configuração da Vercel (links limpos, segurança, cache) |
 | `_fotos-originais/` | Fotos originais do Instagram (não sobe pro site) |
@@ -116,5 +117,5 @@ Na ordem em que aparecem no site:
 - Procure `eduarda.brants016` em todos os arquivos
 
 **Depois de mudar o CSS ou o JS**
-- No `index.html`, aumente o número em `style.css?v=7` ou `script.js?v=4` (ex.: de `v=7` para `v=8`)
+- No `index.html`, aumente o número em `style.css?v=8` ou `script.js?v=4` (ex.: de `v=8` para `v=9`)
 - Assim quem já visitou o site recebe a versão nova sem precisar apertar Ctrl+F5
