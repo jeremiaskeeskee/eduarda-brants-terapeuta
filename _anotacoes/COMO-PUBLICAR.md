@@ -1,51 +1,55 @@
-# Como publicar o site da Eduarda na Vercel
+# Como publicar mudanças no site
+
+O site está no ar em **https://www.eduardabrants.com.br**, hospedado na Vercel e ligado ao GitHub.
+Cada `git push` na branch `main` atualiza o site sozinho em cerca de 1 minuto.
+
+## Passo a passo
+
+No terminal do VS Code (**Ctrl+'**), dentro da pasta do site:
+
+1. Ver o que mudou
+   ```
+   git status
+   ```
+2. Separar tudo para enviar
+   ```
+   git add .
+   ```
+3. Salvar com uma descrição curta (o `-m` é de "mensagem")
+   ```
+   git commit -m "O que mudou"
+   ```
+4. Enviar
+   ```
+   git push
+   ```
+
+Depois confira em **Vercel → Deployments** (o mais recente fica *Ready*) e no site, com **Ctrl+F5**.
+
+## Cuidados
+
+- Salve os arquivos (Ctrl+S) antes do `git add .`.
+- Se o VS Code mostrar "Failed to save … The content of the file is newer", **não clique em Overwrite**: feche a aba sem salvar (Don't Save) e abra o arquivo de novo.
+- Se o `git push` disser *rejected* ou *fetch first*, rode `git pull` e depois `git push`.
+- Se mudou o `style.css` ou o `script.js`, aumente o número do `?v=` no `index.html` (veja o MAPA-DO-SITE).
+
+## Ver mudanças sem publicar
+
+- **Live Server:** no VS Code, clique em **Go Live** (barra azul embaixo). Abre em `127.0.0.1:5500`.
+- **Modo celular:** no navegador, **F12** e depois **Ctrl+Shift+M**.
+- **Testar algo e poder desfazer:** crie uma branch (`git switch -c teste-nome`), mude e veja. Para voltar: `git switch main`. Para apagar o teste: `git branch -D teste-nome`.
 
 ## O que vai para o ar
+
 - `index.html`, `privacidade.html`, `aviso-legal.html`, `404.html`
 - `style.css`, `script.js`, `favicon.svg`, `robots.txt`, `sitemap.xml`, `vercel.json`
 - pasta `img/`
 
-Não vão para o ar (já estão bloqueadas no `.vercelignore` e no `.gitignore`):
-`_fotos-originais/` e este arquivo.
+Não vão para o ar: `_fotos-originais/`, `_anotacoes/`, `.claude/` e `CLAUDE.md`
+(bloqueados no `.vercelignore` e no `.gitignore`).
 
-## Opção A: pelo GitHub (igual ao projeto SK Móveis)
-1. No GitHub, crie um repositório novo e **privado** (ex.: `eduarda-brants-terapeuta`).
-2. Envie a pasta pelo GitHub Desktop ou pelo terminal:
-   ```
-   git init
-   git add .
-   git commit -m "Site Eduarda Brants"
-   git branch -M main
-   git remote add origin https://github.com/SEU-USUARIO/eduarda-brants-terapeuta.git
-   git push -u origin main
-   ```
-3. Na Vercel: **Add New → Project → Import** o repositório.
-4. Em **Framework Preset**, escolha **Other**. Deixe Build Command e Output Directory vazios.
-5. Clique em **Deploy**. O site fica em `eduarda-brants-terapeuta.vercel.app`.
+## Google
 
-A partir daí, cada `git push` atualiza o site sozinho.
-
-## Opção B: pelo terminal, sem GitHub
-```
-npm i -g vercel
-vercel        (prévia)
-vercel --prod (produção)
-```
-
-## MODO PRÉVIA (ativo agora)
-O site está escondido do Google em 3 lugares:
-1. `index.html`: `<meta name="robots" content="noindex, nofollow">`
-2. `robots.txt`: `Disallow: /`
-3. `vercel.json`: cabeçalho `X-Robots-Tag: noindex, nofollow`
-
-### Para lançar de verdade (quando ela se formar e tiver o domínio)
-1. `index.html`: trocar por `<meta name="robots" content="index, follow, max-image-preview:large">`
-2. `robots.txt`: trocar `Disallow: /` por `Allow: /` e adicionar `Sitemap: https://SEU-DOMINIO/sitemap.xml`
-3. `vercel.json`: apagar a linha do `X-Robots-Tag`
-4. Completar os endereços com o domínio (Open Graph, Schema, canonical, sitemap).
-
-## Conectar o domínio (depois)
-1. Vercel → projeto → **Settings → Domains → Add** → `seudominio.com.br`
-2. No registro.br → **DNS** → criar os registros que a Vercel mostrar
-   (normalmente um `A` para `76.76.21.21` e um `CNAME` do `www` para `cname.vercel-dns.com`).
-3. Esperar a propagação (alguns minutos até algumas horas). O HTTPS é automático.
+- O site está liberado para o Google (`robots.txt` com `Allow: /`).
+- Quando fizer uma mudança grande, atualize a data `<lastmod>` no `sitemap.xml`.
+- Search Console: https://search.google.com/search-console (envie o `sitemap.xml` uma vez).

@@ -15,9 +15,10 @@ O mesmo nome aparece no HTML e no CSS.
 | `404.html` | Página de "não encontrada" |
 | `style.css` | Todo o visual (cores, tamanhos, celular) |
 | `script.js` | Menu, formulário, animações, WhatsApp |
-| `img/` | Fotos do site (WebP) |
+| `img/` | Fotos do site (WebP) e imagem de compartilhamento (`og-image.jpg`) |
 | `favicon.svg` | Ícone da aba (girassol) |
-| `robots.txt` / `vercel.json` | Configuração do Google e da Vercel |
+| `robots.txt` / `sitemap.xml` | Instruções e lista de páginas para o Google |
+| `vercel.json` | Configuração da Vercel (links limpos, segurança, cache) |
 | `_fotos-originais/` | Fotos originais do Instagram (não sobe pro site) |
 | `_anotacoes/` | Estas anotações (não sobe pro site) |
 
@@ -29,13 +30,13 @@ Na ordem em que aparecem no site:
 
 ```html
 <!-- Topo -->               logo + menu
-<!-- Início -->             título para os pais, foto dos girassóis, selo
-<!-- Para os pais -->       "O comportamento mudou?" + sinais de atenção + botões
+<!-- Início -->             título, texto, botão, card "Terapeuta formada", foto e selo
+<!-- Para os pais -->       "O comportamento mudou?" + sinais de atenção + botão
 <!-- Como posso ajudar -->  3 cards de temas (no celular andam para o lado)
-<!-- Sobre mim -->          texto e formação (anos)
-<!-- Como funciona -->      ficha (público, 1ª conversa, sessões, formato) + 4 passos
+<!-- Sobre mim -->          fotos + texto sobre ela e a formação
+<!-- Como funciona -->      ficha (público, 1ª conversa, sessões, formato) + 3 passos
 <!-- Dúvidas -->            cartão de contato + perguntas dos pais
-<!-- Agendar -->            formulário (responsável, quem, idade) que abre o WhatsApp
+<!-- Agendar -->            formulário (responsável, quem, idade, período, origem)
 <!-- Instagram -->          perfil + grade de fotos
 <!-- Rodapé -->             links, contato, aviso CVV, crédito
 <!-- Botão WhatsApp -->     botão verde flutuante
@@ -50,8 +51,7 @@ Na ordem em que aparecem no site:
 /* Cores, fontes e medidas */   cores principais ficam aqui (--creme, --marinho, --girassol...)
 /* Botões */
 /* Topo */  /* Topo flutuante */
-/* Início */  /* Selo */
-/* Destaques */
+/* Início */  /* Selo */  /* Credencial no início */
 /* Sobre mim */
 /* Cards */  /* Como posso ajudar */
 /* Para os pais */
@@ -79,6 +79,7 @@ Na ordem em que aparecem no site:
 /* Formulário */             monta a mensagem do WhatsApp
 /* Como posso ajudar */      cards andando para o lado (só quando não cabem na tela)
 /* Como funciona */          linha do tempo acendendo
+/* Credencial */             destaque ao tocar no celular
 ```
 
 ---
@@ -87,14 +88,18 @@ Na ordem em que aparecem no site:
 
 **Número do WhatsApp**
 - `script.js` → `/* Configuração */` → `whatsapp: "55..."` (formulário e botões)
-- Também aparece escrito em: `index.html` (Rodapé), `privacidade.html`, `aviso-legal.html`, `404.html`
-  → procure `99177-5748` e troque em todos
+- Também aparece escrito em: `index.html` (Rodapé e dados do Google no topo do arquivo), `privacidade.html`, `aviso-legal.html`, `404.html`
+  → procure `99177-5748` e `5548991775748` e troque em todos
 
 **Horários / dias de atendimento**
-- `index.html` → procure `manhã` (Destaques, Como funciona, Agendar, Rodapé e menu do celular)
+- `index.html` → procure `manhã` (menu do celular, Como funciona, Agendar e Rodapé)
 
-**Anos de formação**
-- `index.html` → `<!-- Sobre mim -->` → procure `2026` e `2027`
+**Duração da sessão**
+- `index.html` → procure `50 minutos` (Como funciona e Rodapé)
+
+**Card "Terapeuta formada" (início)**
+- `index.html` → procure `credencial__txt`
+- Quando tiver o nome da instituição, troque `Formação em Terapia` por `Formação em Terapia · Nome da instituição`
 
 **Perguntas frequentes**
 - `index.html` → `<!-- Dúvidas -->` → cada pergunta é um `<details>`
@@ -109,3 +114,7 @@ Na ordem em que aparecem no site:
 
 **Instagram**
 - Procure `eduarda.brants016` em todos os arquivos
+
+**Depois de mudar o CSS ou o JS**
+- No `index.html`, aumente o número em `style.css?v=7` ou `script.js?v=4` (ex.: de `v=7` para `v=8`)
+- Assim quem já visitou o site recebe a versão nova sem precisar apertar Ctrl+F5
