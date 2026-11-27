@@ -77,9 +77,10 @@ form.addEventListener("submit", (e) => {
 
   const origem = dados.get("origem");
   const idade = (dados.get("idade") || "").toString().replace(/\D/g, "");
-  const paraFilho = dados.get("quem") !== "eu";
-  const abertura = paraFilho
-    ? `Olá, ${CONFIG.nome}! Me chamo ${nome} e gostaria de agendar uma conversa sobre o meu filho(a)${idade ? `, de ${idade} anos` : ""}.`
+  const quem = dados.get("quem");
+  const sobre = quem === "filha" ? "a minha filha" : "o meu filho";
+  const abertura = quem !== "eu"
+    ? `Olá, ${CONFIG.nome}! Me chamo ${nome} e gostaria de agendar uma conversa sobre ${sobre}${idade ? `, de ${idade} anos` : ""}.`
     : `Olá, ${CONFIG.nome}! Me chamo ${nome}${idade ? `, tenho ${idade} anos` : ""} e gostaria de agendar uma sessão.`;
   const linhas = [
     abertura,
@@ -182,4 +183,18 @@ document.getElementById("ano").textContent = new Date().getFullYear();
   window.addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(atualizar); } }, { passive: true });
   window.addEventListener("resize", atualizar);
   atualizar();
+})();
+
+/* Credencial: destaque ao tocar no celular */
+(() => {
+  const card = document.querySelector(".credencial");
+  if (!card) return;
+  let t;
+  card.addEventListener("touchstart", () => {
+    card.classList.remove("is-toque");
+    void card.offsetWidth;
+    card.classList.add("is-toque");
+    clearTimeout(t);
+    t = setTimeout(() => card.classList.remove("is-toque"), 1200);
+  }, { passive: true });
 })();
